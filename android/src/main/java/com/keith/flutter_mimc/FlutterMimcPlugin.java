@@ -194,7 +194,6 @@ public class FlutterMimcPlugin implements FlutterPlugin, MethodCallHandler {
 
       // 登录
       case "login":
-        System.out.println("login");
         mimcUserManager.login();
         result.success(null);
 

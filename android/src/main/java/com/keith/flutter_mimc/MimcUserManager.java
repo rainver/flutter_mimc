@@ -214,7 +214,7 @@ class MIMCUserManager {
 
         // create new user 传入appAccount作为resource禁止多手机登录
         mimcUser = MIMCUser.newInstance(appId, appAccount, appAccount, null, null);
-        mimcUser.enableSSO(false);
+        mimcUser.enableSSO(true);
 
         // 注册相关监听，必须
         mimcUser.registerTokenFetcher(new TokenFetcherString());
