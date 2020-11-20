@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e06dfe4-4392-4629-bb11-f046efcdedd6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/libs/mimc-java-sdk-1.4.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/android/libs/mimc-java-sdk-2.0.5-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/keith/flutter_mimc/FlutterMimcPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/keith/flutter_mimc/FlutterMimcPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/keith/flutter_mimc/MimcHandleMIMCMsgListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/keith/flutter_mimc/MimcHandleMIMCMsgListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/main/java/com/keith/flutter_mimc/MimcUserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/keith/flutter_mimc/MimcUserManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/flutter_mimc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/flutter_mimc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
