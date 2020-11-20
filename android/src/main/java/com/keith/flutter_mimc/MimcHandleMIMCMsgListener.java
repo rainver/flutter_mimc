@@ -4,7 +4,6 @@ import com.xiaomi.mimc.MIMCGroupMessage;
 import com.xiaomi.mimc.MIMCMessage;
 import com.xiaomi.mimc.MIMCOnlineMessageAck;
 import com.xiaomi.mimc.MIMCServerAck;
-import com.xiaomi.mimc.common.MIMCConstant;
 
 class MIMCHandleMIMCMsgListener implements MIMCUserManager.OnHandleMIMCMsgListener {
     MIMCHandleMIMCMsgListener(){
@@ -76,7 +75,7 @@ class MIMCHandleMIMCMsgListener implements MIMCUserManager.OnHandleMIMCMsgListen
     }
 
     @Override
-    public void onHandleStatusChanged(MIMCConstant.OnlineStatus status) {
+    public void onHandleStatusChanged(int status) {
         if(FlutterMimcPlugin.eventSink == null)
         {
             System.out.println("eventSink  null");
@@ -85,7 +84,7 @@ class MIMCHandleMIMCMsgListener implements MIMCUserManager.OnHandleMIMCMsgListen
         try {
             ConstraintsMap params = new ConstraintsMap();
             params.putString("eventType", "onlineStatusListener");
-            params.putBoolean("eventValue", MIMCConstant.OnlineStatus.ONLINE == status);
+            params.putInt("eventValue", status);
             FlutterMimcPlugin.eventSink.success(params.toMap());
         }catch (Exception e){
             System.out.println("eventSink  Error:" + e.getMessage());

@@ -100,8 +100,8 @@ class FlutterMIMC {
   /// dismiss unlimited group group
 
   /// status changed
-  final StreamController<bool> _onlineStatusListenerStreamController =
-      StreamController<bool>.broadcast();
+  final StreamController<int> _onlineStatusListenerStreamController =
+      StreamController<int>.broadcast();
 
   /// Receive single chat
   final StreamController<MIMCMessage> _onHandleMessageStreamController =
@@ -783,7 +783,7 @@ class FlutterMIMC {
     dynamic eventValue = event['eventValue'];
     switch (eventType) {
       case MIMCEvents.onlineStatusListener:
-        _onlineStatusListenerStreamController.add(eventValue as bool);
+        _onlineStatusListenerStreamController.add(eventValue as int);
         break;
       case MIMCEvents.onHandleMessage:
         _onHandleMessageStreamController.add(MIMCMessage.fromJson(eventValue));
@@ -857,7 +857,7 @@ class FlutterMIMC {
   void removeEventListenerStatusChanged() =>
       _onlineStatusListenerStreamController.close();
 
-  Stream<bool> addEventListenerStatusChanged() {
+  Stream<int> addEventListenerStatusChanged() {
     return _onlineStatusListenerStreamController.stream;
   }
 

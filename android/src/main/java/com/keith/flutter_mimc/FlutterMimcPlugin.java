@@ -1,5 +1,6 @@
 package com.keith.flutter_mimc;
 
+import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 
@@ -20,10 +21,12 @@ import io.flutter.plugin.common.PluginRegistry.Registrar;
 public class FlutterMimcPlugin implements FlutterPlugin, MethodCallHandler {
 
   static EventChannel.EventSink eventSink = null;
+  private Context context;
 
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
     System.out.println("FlutterPluginBinding");
+    context = flutterPluginBinding.getApplicationContext();
     MethodChannel channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "flutter_mimc");
     channel.setMethodCallHandler(new FlutterMimcPlugin());
     EventChannel eventChannel = new EventChannel(flutterPluginBinding.getBinaryMessenger(), "flutter_mimc.event");
@@ -148,7 +151,8 @@ public class FlutterMimcPlugin implements FlutterPlugin, MethodCallHandler {
         if (isDebug) {
           mimcUserManager.openLog();
         }
-        mimcUserManager.init(token);
+
+        mimcUserManager.init(token, context);
         result.success(null);
         break;
       }

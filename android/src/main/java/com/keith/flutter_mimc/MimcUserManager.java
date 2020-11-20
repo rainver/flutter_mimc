@@ -1,4 +1,5 @@
 package com.keith.flutter_mimc;
+import android.content.Context;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.xiaomi.mimc.MIMCGroupMessage;
@@ -17,6 +18,7 @@ import com.xiaomi.msg.logger.MIMCLog;
 import java.util.List;
 
 class MIMCUserManager {
+    private Context context;
 
     // 配置信息
     private long appId;
@@ -30,8 +32,9 @@ class MIMCUserManager {
     private OnHandleMIMCMsgListener onHandleMIMCMsgListener;
 
     //  通过服务的鉴权获得的String 初始化
-    void init(String tokenString){
+    void init(String tokenString, Context context){
         try {
+            this.context = context;
             MIMCUserManager.tokenString = tokenString;
             com.alibaba.fastjson.JSONObject tokenMap = JSON.parseObject(tokenString);
             this.appId = Long.parseLong(tokenMap.getJSONObject("data").getString("appId"));
@@ -124,7 +127,7 @@ class MIMCUserManager {
     public interface OnHandleMIMCMsgListener {
         void onHandleMessage(MIMCMessage chatMsg);
         void onHandleGroupMessage(MIMCGroupMessage chatMsg);
-        void onHandleStatusChanged(MIMCConstant.OnlineStatus status);
+        void onHandleStatusChanged(int status);
         void onHandleServerAck(MIMCServerAck serverAck);
         void onHandleSendMessageTimeout(MIMCMessage message);
         void onHandleSendGroupMessageTimeout(MIMCGroupMessage groupMessage);
@@ -209,15 +212,15 @@ class MIMCUserManager {
             mimcUser.destroy();
         }
 
-        // create new user
-        mimcUser = MIMCUser.newInstance(appId, appAccount, null);
+        // create new user 传入appAccount作为resource禁止多手机登录
+        mimcUser = MIMCUser.newInstance(appId, appAccount, appAccount, context.getExternalCacheDir().getPath(), context.getCacheDir().getPath());
+        mimcUser.enableSSO(false);
 
         // 注册相关监听，必须
         mimcUser.registerTokenFetcher(new TokenFetcherString());
         mimcUser.registerMessageHandler(new MessageHandler());
         mimcUser.registerOnlineStatusListener(new OnlineStatusListener());
         mimcUser.registerUnlimitedGroupHandler(new UnlimitedGroupHandler());
-
     }
 
     // 无限群聊消息回调
@@ -253,8 +256,17 @@ class MIMCUserManager {
     class OnlineStatusListener implements MIMCOnlineStatusListener {
         @Override
         public void statusChange(MIMCConstant.OnlineStatus status, String type, String reason, String desc) {
-            mStatus = status;
-            onHandleMIMCMsgListener.onHandleStatusChanged(status);
+            int st = 0;
+            if(status == MIMCConstant.OnlineStatus.ONLINE) {
+                st = 1;
+            } else {
+                if(MIMCConstant.SINGLE_RESOURCE_KICK.equalsIgnoreCase(type)) {
+                    st = 2;
+                }else{
+                    st = 0;
+                }
+            }
+            onHandleMIMCMsgListener.onHandleStatusChanged(st);
         }
     }
 
