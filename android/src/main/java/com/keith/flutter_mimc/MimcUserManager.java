@@ -213,7 +213,7 @@ class MIMCUserManager {
         }
 
         // create new user 传入appAccount作为resource禁止多手机登录
-        mimcUser = MIMCUser.newInstance(appId, appAccount, appAccount, context.getCacheDir().getPath(), context.getCacheDir().getPath());
+        mimcUser = MIMCUser.newInstance(appId, appAccount, appAccount, null, null);
         mimcUser.enableSSO(false);
 
         // 注册相关监听，必须
