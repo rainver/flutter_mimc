@@ -16,7 +16,7 @@ class _MyAppState extends State<MyApp> {
   final String appAccount = "100165"; // 我的账号
   String groupID = "21351198708203520"; // 操作的普通群ID
   String maxGroupID = "21360844399443968"; // 操作的无限通群ID
-  bool isOnline = false;
+  int isOnline = 0;
   List<Map<String, String>> logs = [];
   TextEditingController accountCtr = TextEditingController();
   TextEditingController contentCtr = TextEditingController();
@@ -561,7 +561,7 @@ class _MyAppState extends State<MyApp> {
     // 监听登录状态
     flutterMimc.addEventListenerStatusChanged().listen((status) {
       isOnline = status;
-      if (status) {
+      if (status == 1) {
         addLog("$appAccount====状态变更====上线");
       } else {
         addLog("$appAccount====状态变更====下线");
@@ -711,9 +711,9 @@ class _MyAppState extends State<MyApp> {
           actions: <Widget>[
             RaisedButton(
               color: Colors.blue,
-              onPressed: isOnline ? logout : login,
+              onPressed: isOnline == 1 ? logout : login,
               child: Text(
-                isOnline ? "退出登录" : "登录",
+                isOnline == 1 ? "退出登录" : "登录",
                 style: TextStyle(color: Colors.white),
               ),
             ),
@@ -726,7 +726,7 @@ class _MyAppState extends State<MyApp> {
               child: Column(
                 children: <Widget>[
                   Text(
-                      "\r\n当前账号：$appAccount,  当前状态：${isOnline ? '在线' : '离线'}\r\n"),
+                      "\r\n当前账号：$appAccount,  当前状态：${isOnline == 1 ? '在线' : '离线'}\r\n"),
                   SizedBox(
                     height: 35.0,
                     child: TextField(

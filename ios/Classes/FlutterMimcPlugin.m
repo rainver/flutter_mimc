@@ -193,10 +193,16 @@ XMUserManager *mimcUserManager;
         return;
     }
     FlutterEventSink eventSink = mimcEvent.eventSink;
+    int st = status;
+    if(st == 0 && [type isEqual: @"single-resource-kick"]) {
+        st = 2;
+    }
+    
+    
     if(eventSink){
         eventSink(@{
             @"eventType" : @"onlineStatusListener",
-            @"eventValue" : status == 1 ? @YES : @NO,
+            @"eventValue" : [NSNumber numberWithInt:(st)],
         });
     }
 }
@@ -413,6 +419,11 @@ XMUserManager *mimcUserManager;
         });
     }
 }
+
+- (BOOL)onPullNotification {
+    return true;
+}
+
 
 - (void)handleCreateUnlimitedGroup:(int64_t)topicId topicName:(NSString *)topicName code:(int)code desc:(NSString *)desc context:(id)context {
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];

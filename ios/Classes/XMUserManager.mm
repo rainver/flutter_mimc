@@ -39,8 +39,9 @@
 
 // 用户登录
 - (BOOL)userLogin {
-    _user = [[MCUser alloc] initWithAppId:_appId andAppAccount:_appAccount];
+    _user = [[MCUser alloc] initWithAppId:_appId andAppAccount:_appAccount andResource:_appAccount];
     _user.parseTokenDelegate = self;
+    [_user enableSSO:true];
     return [_user login];
 }
 
