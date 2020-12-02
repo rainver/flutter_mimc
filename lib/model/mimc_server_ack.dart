@@ -1,14 +1,14 @@
-class MimcServeraAck {
+class MimcServerAck {
   String packetId;
   int timestamp;
   String desc;
   int sequence;
   int code;
 
-  MimcServeraAck(
+  MimcServerAck(
       {this.packetId, this.timestamp, this.desc, this.sequence, this.code});
 
-  MimcServeraAck.fromJson(Map<dynamic, dynamic> json) {
+  MimcServerAck.fromJson(Map<dynamic, dynamic> json) {
     this.packetId = json['packetId'];
     this.timestamp = json['timestamp'];
     this.desc = json['desc'];

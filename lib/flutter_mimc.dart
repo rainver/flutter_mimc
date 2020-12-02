@@ -5,12 +5,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'model/mimc_message.dart';
 import 'model/mimc_response.dart';
-import 'model/mimc_servera_ack.dart';
+import 'model/mimc_server_ack.dart';
 import 'services/enums.dart';
 import 'services/mimc_services.dart';
 
 export 'model/mimc_message.dart';
-export 'model/mimc_servera_ack.dart';
+export 'model/mimc_server_ack.dart';
 export 'services/enums.dart';
 export 'model/mimc_response.dart';
 export 'services/mimc_services.dart';
@@ -112,8 +112,8 @@ class FlutterMIMC {
       StreamController<MIMCMessage>.broadcast();
 
   /// The receiving server has received a confirmation message
-  final StreamController<MimcServeraAck> _onHandleServerAckStreamController =
-      StreamController<MimcServeraAck>.broadcast();
+  final StreamController<MimcServerAck> _onHandleServerAckStreamController =
+      StreamController<MimcServerAck>.broadcast();
 
   /// Send a single chat message timed out
   final StreamController<MIMCMessage>
@@ -151,9 +151,9 @@ class FlutterMIMC {
       StreamController<Map<dynamic, dynamic>>.broadcast();
 
   // send Feedback callback for online messages callbacks
-  final StreamController<MimcServeraAck>
+  final StreamController<MimcServerAck>
       _onHandleOnlineMessageAckStreamController =
-      StreamController<MimcServeraAck>.broadcast();
+      StreamController<MimcServerAck>.broadcast();
 
   // Receive Feedback callback for online messages callbacks
   final StreamController<MIMCMessage> _onHandleOnlineMessageStreamController =
@@ -806,7 +806,7 @@ class FlutterMIMC {
         break;
       case MIMCEvents.onHandleServerAck:
         _onHandleServerAckStreamController
-            .add(MimcServeraAck.fromJson(eventValue as Map<dynamic, dynamic>));
+            .add(MimcServerAck.fromJson(eventValue as Map<dynamic, dynamic>));
         break;
       case MIMCEvents.onHandleCreateUnlimitedGroup:
         _onHandleCreateUnlimitedGroupStreamController
@@ -830,7 +830,7 @@ class FlutterMIMC {
         break;
       case MIMCEvents.onHandleOnlineMessageAck:
         _onHandleOnlineMessageAckStreamController
-            .add(MimcServeraAck.fromJson(eventValue as Map<dynamic, dynamic>));
+            .add(MimcServerAck.fromJson(eventValue as Map<dynamic, dynamic>));
         break;
       default:
         print("notfund event");
@@ -841,7 +841,7 @@ class FlutterMIMC {
   void removeEventListenerOnlineMessageAck() =>
       _onHandleOnlineMessageAckStreamController.close();
 
-  Stream<MimcServeraAck> addEventListenerOnlineMessageAck() {
+  Stream<MimcServerAck> addEventListenerOnlineMessageAck() {
     return _onHandleOnlineMessageAckStreamController.stream;
   }
 
@@ -881,7 +881,7 @@ class FlutterMIMC {
   void removeEventListenerServerAck() =>
       _onHandleServerAckStreamController.close();
 
-  Stream<MimcServeraAck> addEventListenerServerAck() {
+  Stream<MimcServerAck> addEventListenerServerAck() {
     return _onHandleServerAckStreamController.stream;
   }
 

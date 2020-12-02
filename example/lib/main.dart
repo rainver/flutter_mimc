@@ -560,8 +560,8 @@ class _MyAppState extends State<MyApp> {
     print(await flutterMimc.isOnline());
     // 监听登录状态
     flutterMimc.addEventListenerStatusChanged().listen((status) {
-      isOnline = status;
-      if (status) {
+      isOnline = status == 1;
+      if (status == 0) {
         addLog("$appAccount====状态变更====上线");
       } else {
         addLog("$appAccount====状态变更====下线");
@@ -592,14 +592,14 @@ class _MyAppState extends State<MyApp> {
     });
 
     // 发送消息回调
-    flutterMimc.addEventListenerServerAck().listen((MimcServeraAck ack) {
+    flutterMimc.addEventListenerServerAck().listen((MimcServerAck ack) {
       addLog("发送消息回调==${ack.toJson()}");
     }).onError((err) {
       addLog(err);
     });
 
     // 发送在线消息回调
-    flutterMimc.addEventListenerOnlineMessageAck().listen((MimcServeraAck ack) {
+    flutterMimc.addEventListenerOnlineMessageAck().listen((MimcServerAck ack) {
       addLog("发送在线消息回调==${ack.toJson()}");
     }).onError((err) {
       addLog(err);

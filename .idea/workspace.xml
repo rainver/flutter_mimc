@@ -3,7 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="7e06dfe4-4392-4629-bb11-f046efcdedd6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/keith/flutter_mimc/FlutterMimcPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/keith/flutter_mimc/FlutterMimcPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/FlutterMimcPlugin.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/FlutterMimcPlugin.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/FlutterMimcPlugin.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/FlutterMimcPlugin.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/XMUserManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/XMUserManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/XMUserManager.mm" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/XMUserManager.mm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Frameworks/MMCSDK.framework/Headers/MCOnlineMessageAck.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Frameworks/MMCSDK.framework/Headers/MCUser.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Frameworks/MMCSDK.framework/Headers/MIMCChannelUser.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Frameworks/MMCSDK.framework/Headers/MIMCGroupMessage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Frameworks/MMCSDK.framework/Headers/MIMCLaunchedResponse.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Frameworks/MMCSDK.framework/Headers/MIMCLoggerWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Frameworks/MMCSDK.framework/Headers/MIMCMessage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Frameworks/MMCSDK.framework/Headers/MIMCRtsChannelType.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Frameworks/MMCSDK.framework/Headers/MIMCRtsDataType.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Frameworks/MMCSDK.framework/Headers/MIMCServerAck.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Frameworks/MMCSDK.framework/Headers/MIMCStreamConfig.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Frameworks/MMCSDK.framework/Headers/MMCSDK.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Frameworks/MMCSDK.framework/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Frameworks/MMCSDK.framework/MMCSDK" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Frameworks/MMCSDK.framework/Modules/module.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/flutter_mimc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/flutter_mimc.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/model/mimc_servera_ack.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model/mimc_server_ack.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,52 +34,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>21351318392668160</find>
-      <find>102</find>
-      <find>21352937364652032</find>
-      <find>15416498726633513</find>
-      <find>&quot;21354536967340032&quot;</find>
-      <find>VerticalDivider(width: 5.0,),</find>
-      <find>print</find>
-      <find>21370216554954752</find>
-      <find>iosBtn</find>
-      <find>VerticalDivider(width: 2.0,)</find>
-      <find>groupMaxID</find>
-      <find>as</find>
-      <find>addEventListenerSendGroupMessageTimeout</find>
-      <find>groupId</find>
-      <find>message</find>
-      <find>21359883127881728</find>
-      <find>isUnlimitedGroup</find>
-      <find>onHandleSendUnlimitedGroupMessageTimeout</find>
-      <find>error</find>
-      <find>com.alibaba.fastjson.JSONAware</find>
-      <find>MimcChatMessage</find>
-      <find>pid</find>
-      <find>gid</find>
-      <find>消息</find>
-      <find>Non-group master user</find>
-      <find>结束时间</find>
-      <find>dismiss</find>
-      <find>infinite</find>
-      <find>jsonString</find>
-      <find>sendOnLineMessage</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>MimcChatResource</replace>
-      <replace>MimcChatMessage</replace>
-      <replace>groupID</replace>
-      <replace>VerticalDivider(width: 2.0,),</replace>
-      <replace>addLog</replace>
-      <replace>button</replace>
-      <replace>maxGroupID</replace>
-      <replace>MIMCMessage</replace>
-      <replace>Non-group master user quit group</replace>
-      <replace>End Time</replace>
-    </replaceStrings>
-  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[00dde5491588b9cc]" />
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -75,12 +51,12 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
@@ -189,9 +165,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -210,6 +184,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
@@ -236,6 +211,10 @@
     </state>
     <state x="221" y="79" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1605841473544" />
     <state x="221" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1605494785734" />
+    <state x="412" y="217" width="615" height="490" key="find.popup" timestamp="1606912965304">
+      <screen x="0" y="25" width="1440" height="875" />
+    </state>
+    <state x="412" y="217" width="615" height="490" key="find.popup/0.25.1440.875@0.25.1440.875" timestamp="1606912965304" />
   </component>
   <component name="masterDetails">
     <states>

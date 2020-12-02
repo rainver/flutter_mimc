@@ -29,34 +29,50 @@
 
 // 通过服务端的鉴权获得的String 初始化
 -(void)initStringToken:(NSString *)stringToken{
+    NSLog(@"initStringToken：%@",stringToken);
     _stringToken = stringToken;
     NSDictionary *dic = [XMUserManager dictionaryWithJsonString:stringToken];
     _appId = [[[dic valueForKey:@"data"] valueForKey:@"appId"] longLongValue];
     _appAccount = [[dic valueForKey:@"data"] valueForKey:@"appAccount"];
+    NSLog(@"_appId：%lld",_appId);
+    NSLog(@"_appAccount：%@",_appAccount);
 }
 
 
 
 // 用户登录
 - (BOOL)userLogin {
-    _user = [[MCUser alloc] initWithAppId:_appId andAppAccount:_appAccount];
+    _user = [[MCUser alloc] initWithAppId:_appId andAppAccount:_appAccount andResource:_appAccount];
     _user.parseTokenDelegate = self;
+    [_user enableSSO:YES];
     return [_user login];
 }
 
 // 用户退出
 - (BOOL)userLogout {
-    return [_user logout];
+    BOOL ret = [_user logout];
+    [_user destroy];
+    return ret;
 }
 
 // token
-- (void)parseProxyServiceToken:(void(^)(NSString *data))callback {
+/*
+- (void)parseProxyServiceToken:(void(^)(NSData *data))callback {
     NSDictionary *dic = [XMUserManager dictionaryWithJsonString:_stringToken];
     NSMutableDictionary *tokenDic = [dic objectForKey:@"data"];
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:tokenDic options:0 error:0];
     NSString *jsonTokenString = [[NSString alloc] initWithData: jsonData encoding:NSUTF8StringEncoding];
     if (callback) {
-        callback(jsonTokenString);
+        callback(jsonData);
+    }
+    return;
+}*/
+- (void)parseProxyServiceToken:(void (^)(NSData *))callback {
+    NSDictionary *dic = [XMUserManager dictionaryWithJsonString:_stringToken];
+    NSMutableDictionary *tokenDic = [dic objectForKey:@"data"];
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:tokenDic options:0 error:0];
+    if (callback) {
+        callback(jsonData);
     }
     return;
 }
@@ -109,6 +125,5 @@
     }
     return dic;
 }
-
 
 @end

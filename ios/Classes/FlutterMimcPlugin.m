@@ -50,17 +50,6 @@ XMUserManager *mimcUserManager;
         
     }
     
-    // 登录
-    else if ([@"login" isEqualToString:call.method]) {
-        
-        [mimcUserManager userLogin];
-        mimcUserManager.getUser.onlineStatusDelegate = self;
-        mimcUserManager.getUser.handleMessageDelegate = self;
-        mimcUserManager.getUser.handleUnlimitedGroupDelegate = self;
-        result(NULL);
-        
-    }
-    
     // 退出登录
     else if ([@"logout" isEqualToString:call.method]) {
         
@@ -192,17 +181,21 @@ XMUserManager *mimcUserManager;
         NSLog(@"statusChange, user is nil");
         return;
     }
+    int st = status;
+    if (st == 0 && [@"single-resource-kick" isEqual:type]) {
+        st = 2;
+    }
     FlutterEventSink eventSink = mimcEvent.eventSink;
     if(eventSink){
         eventSink(@{
             @"eventType" : @"onlineStatusListener",
-            @"eventValue" : status == 1 ? @YES : @NO,
+            @"eventValue" : [NSNumber numberWithInt:st],
         });
     }
 }
 
 // 接收单聊消息
-- (void)handleMessage:(NSArray<MIMCMessage*> *)packets user:(MCUser *)user {
+- (BOOL)handleMessage:(NSArray<MIMCMessage*> *)packets user:(MCUser *)user {
     for (MIMCMessage *p in packets) {
         if (p == nil) {
             NSLog(@"handleMessage, ReceiveMessage, P2P is nil");
@@ -228,10 +221,11 @@ XMUserManager *mimcUserManager;
             });
         }
     }
+    return YES;
 }
 
 // 接收群聊消息
-- (void)handleGroupMessage:(NSArray<MIMCGroupMessage*> *)packets {
+- (BOOL)handleGroupMessage:(NSArray<MIMCGroupMessage*> *)packets {
     for (MIMCGroupMessage *p in packets) {
         if (p == nil) {
             NSLog(@"handleMessage, ReceiveMessage, P2P is nil");
@@ -255,7 +249,7 @@ XMUserManager *mimcUserManager;
             });
         }
     }
-    
+    return YES;
 }
 
 // 发送消息服务器回调确认
@@ -323,7 +317,7 @@ XMUserManager *mimcUserManager;
 }
 
 // 接收无限群消息
-- (void)handleUnlimitedGroupMessage:(NSArray<MIMCGroupMessage*> *)packets {
+- (BOOL)handleUnlimitedGroupMessage:(NSArray<MIMCGroupMessage*> *)packets {
     for (MIMCGroupMessage *p in packets) {
         if (p == nil) {
             NSLog(@"handleMessage, ReceiveMessage, P2P is nil");
@@ -347,6 +341,7 @@ XMUserManager *mimcUserManager;
             });
         }
     }
+    return YES;
 }
 
 
@@ -413,6 +408,11 @@ XMUserManager *mimcUserManager;
         });
     }
 }
+
+- (BOOL)onPullNotification {
+    return YES;
+}
+
 
 - (void)handleCreateUnlimitedGroup:(int64_t)topicId topicName:(NSString *)topicName code:(int)code desc:(NSString *)desc context:(id)context {
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];

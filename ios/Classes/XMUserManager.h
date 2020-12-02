@@ -12,6 +12,6 @@
 - (MCUser *)getUser;
 - (NSString *)getAppId;
 - (void)setUser:(MCUser *)user;
-- (void)parseProxyServiceToken:(void(^)(NSString *data))callback;
+- (void)parseProxyServiceToken:(void(^)(NSData *data))callback;
 +(NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString;
 @end
