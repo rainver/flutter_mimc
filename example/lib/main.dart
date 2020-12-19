@@ -78,7 +78,7 @@ class _MyAppState extends State<MyApp> {
     if (id == null || id.isEmpty || content == null || content.isEmpty) {
       _scaffoldKey.currentState.showSnackBar(SnackBar(
         content: Text("id 或 content参数错误"),
-        backgroundColor: Colors.pink,
+        backgroundColor: AppConfig.mainColor,
       ));
       return;
     }

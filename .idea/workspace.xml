@@ -3,28 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7e06dfe4-4392-4629-bb11-f046efcdedd6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/FlutterMimcPlugin.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/FlutterMimcPlugin.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/FlutterMimcPlugin.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/FlutterMimcPlugin.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/XMUserManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/XMUserManager.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/XMUserManager.mm" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/XMUserManager.mm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/MMCSDK.framework/Headers/MCOnlineMessageAck.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/MMCSDK.framework/Headers/MCUser.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/MMCSDK.framework/Headers/MIMCChannelUser.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/MMCSDK.framework/Headers/MIMCGroupMessage.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/MMCSDK.framework/Headers/MIMCLaunchedResponse.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/MMCSDK.framework/Headers/MIMCLoggerWrapper.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/MMCSDK.framework/Headers/MIMCMessage.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/MMCSDK.framework/Headers/MIMCRtsChannelType.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/MMCSDK.framework/Headers/MIMCRtsDataType.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/MMCSDK.framework/Headers/MIMCServerAck.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/MMCSDK.framework/Headers/MIMCStreamConfig.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/MMCSDK.framework/Headers/MMCSDK.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/MMCSDK.framework/Info.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/MMCSDK.framework/MMCSDK" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Frameworks/MMCSDK.framework/Modules/module.modulemap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/flutter_mimc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/flutter_mimc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/model/mimc_servera_ack.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model/mimc_server_ack.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +12,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[00dde5491588b9cc]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
